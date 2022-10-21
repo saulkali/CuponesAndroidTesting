@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Cupones</string>
+    <string name="main_btn_consult">Consultar</string>
+    <string name="main_btn_create">Crear Cupon</string>
+    <string name="main_tv_welcome">Bienvendio, ingrese su cumpon y dele continuar</string>
+    <string name="cupon_text_field">Cupon</string>
+    <string name="description_text_field">Descripcion</string>
+    <string name="error_unique_code">Error el cupon ya existe</string>
+    <string name="error_invalid_length">La longitud del cupon no es valida</string>
+    <string name="error_unknow">Error Desconocido</string>
+    <string name="main_add_success">Se guardo de manera correcta</string>
+    <string name="main_hint_description">Descripcion</string>
+    <string name="main_hint_active">Cupon Activo</string>
+</resources>
