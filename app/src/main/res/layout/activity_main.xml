@@ -45,8 +45,8 @@
             android:layout_height="wrap_content"
             android:text="@string/main_btn_create"
             android:onClick="@{()->viewModel.addCupon()}"
-            android:visibility="gone"
             tools:visibility="visible"
+            app:isGone="@{isActive}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnConsult"
             app:layout_constraintBottom_toTopOf="@id/guideline"
@@ -77,7 +77,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edCupon"
                 android:layout_width="match_parent"
-                android:text="@{viewModel.cupon.code}"
+                android:text="@={viewModel.cupon.code}"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/cupon_text_field"
                 />
@@ -98,7 +98,7 @@
                 android:id="@+id/edDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.cupon.description}"
+                android:text="@={viewModel.cupon.description}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
                 tools:text = "Este cupon tiene el 10% de descuento en compras mayores de 10 USD"
                 android:contentDescription="@string/description_text_field"

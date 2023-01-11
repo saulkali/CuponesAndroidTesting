@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class MainViewModel :ViewModel(){
     private val respository = MainRepository()
 
-    val cupon = MutableLiveData<CuponEntity>();
+    val cupon = MutableLiveData(CuponEntity());
 
     private val hideKeyboard = MutableLiveData<Boolean>();
     fun isHideKeyboard() = hideKeyboard
@@ -24,7 +24,7 @@ class MainViewModel :ViewModel(){
         cupon.value?.code?.let { code ->
             viewModelScope.launch {
                 hideKeyboard.value = true;
-                cupon.value = respository.consultCuponByCode(code)
+                cupon.value = respository.consultCuponByCode(code) ?: CuponEntity(code = code, isActive = false)
             }
         }
     }
@@ -34,6 +34,7 @@ class MainViewModel :ViewModel(){
             viewModelScope.launch {
                 hideKeyboard.value = true
                 try{
+                    cuponEntity.isActive = true
                     respository.addCupon(cuponEntity)
                     consultCuponByCode()
                     snackbarMsg.value = R.string.main_add_success

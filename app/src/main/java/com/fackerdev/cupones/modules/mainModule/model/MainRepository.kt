@@ -1,5 +1,6 @@
 package com.fackerdev.cupones.modules.mainModule.model
 
+
 import com.fackerdev.cupones.common.entitites.CuponEntity
 import com.fackerdev.cupones.common.utils.Constans
 import com.fackerdev.cupones.common.utils.validateTextCode
